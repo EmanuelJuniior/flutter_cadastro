@@ -11,20 +11,20 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Form(
-          child: ListView(
-        children: [
-          const SizedBox(
-            height: 50,
-          ),
-          TextFormField(
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Digite seu email',
-            ),
-          )
-        ],
-      )),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Form(
+            child: ListView(
+          children: [
+            TextFormField(
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Digite seu email',
+              ),
+            )
+          ],
+        )),
+      ),
     );
   }
 }
