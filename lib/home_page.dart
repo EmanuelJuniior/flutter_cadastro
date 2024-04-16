@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,6 +15,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Cadastro'),
+      ),
       body: Padding(
         padding: const EdgeInsets.only(
           top: 30,
@@ -29,7 +34,8 @@ class _HomePageState extends State<HomePage> {
                     border: OutlineInputBorder(),
                     labelText: 'Digite seu email',
                   ),
-                )
+                ),
+                ElevatedButton(onPressed: () {}, child: const Text('Enviar'))
               ],
             )),
       ),
