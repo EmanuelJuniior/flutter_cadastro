@@ -8,6 +8,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final _formKey = GlobalKey<FormState>();
+  final controllerEmail = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,16 +20,18 @@ class _HomePageState extends State<HomePage> {
           right: 20,
         ),
         child: Form(
+            key: _formKey,
             child: ListView(
-          children: [
-            TextFormField(
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Digite seu email',
-              ),
-            )
-          ],
-        )),
+              children: [
+                TextFormField(
+                  controller: controllerEmail,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Digite seu email',
+                  ),
+                )
+              ],
+            )),
       ),
     );
   }
