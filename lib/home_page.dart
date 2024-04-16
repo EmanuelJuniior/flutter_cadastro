@@ -14,10 +14,13 @@ class _HomePageState extends State<HomePage> {
       body: Form(
           child: ListView(
         children: [
+          const SizedBox(
+            height: 50,
+          ),
           TextFormField(
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
-              labelText: 'Digite sue email',
+              labelText: 'Digite seu email',
             ),
           )
         ],
