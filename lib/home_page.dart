@@ -12,7 +12,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.only(
+          top: 30,
+          left: 20,
+          right: 20,
+        ),
         child: Form(
             child: ListView(
           children: [
