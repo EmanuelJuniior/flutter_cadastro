@@ -37,12 +37,21 @@ class _HomePageState extends State<HomePage> {
                   ),
                   validator: (email) {
                     if (email!.isEmpty) {
-                      return 'Digite um Email';
+                      return 'Digite um Email Válido!!';
+                    }
+                    if (!email.contains('@')) {
+                      return 'Digite um Email Válido!!';
                     }
                     return null;
                   },
                 ),
-                ElevatedButton(onPressed: () {}, child: const Text('Enviar'))
+                ElevatedButton(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        controllerEmail.text = '';
+                      }
+                    },
+                    child: const Text('Enviar'))
               ],
             )),
       ),
