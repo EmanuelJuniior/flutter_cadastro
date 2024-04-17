@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,6 +10,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final _formKey = GlobalKey<FormState>();
   final controllerEmail = TextEditingController();
+  final controllerSenha = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,22 +27,41 @@ class _HomePageState extends State<HomePage> {
             key: _formKey,
             child: ListView(
               children: [
-                TextFormField(
-                  controller: controllerEmail,
-                  autovalidateMode: AutovalidateMode.onUserInteraction,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Digite seu email',
-                  ),
-                  validator: (email) {
-                    if (email!.isEmpty) {
-                      return 'Digite um Email Válido!!';
-                    }
-                    if (!email.contains('@')) {
-                      return 'Digite um Email Válido!!';
-                    }
-                    return null;
-                  },
+                Column(
+                  children: [
+                    TextFormField(
+                      controller: controllerEmail,
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Digite seu email',
+                      ),
+                      validator: (email) {
+                        if (email!.isEmpty) {
+                          return 'Digite um Email Válido!!';
+                        }
+                        if (!email.contains('@')) {
+                          return 'Digite um Email Válido!!';
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    TextFormField(
+                      obscureText: true,
+                      controller: controllerSenha,
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                      decoration: const InputDecoration(
+                          border: OutlineInputBorder(), labelText: 'Senha:'),
+                      validator: (senha) {
+                        if (senha!.length < 6) {
+                          return 'Digite mais de 6 caracteres!';
+                        }
+                      },
+                    ),
+                  ],
                 ),
                 ElevatedButton(
                     onPressed: () {
