@@ -59,6 +59,7 @@ class _HomePageState extends State<HomePage> {
                         if (senha!.length < 6) {
                           return 'Digite mais de 6 caracteres!';
                         }
+                        return null;
                       },
                     ),
                   ],
