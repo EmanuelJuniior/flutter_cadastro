@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                 ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        controllerEmail.text = '';
+                        Navigator.pushNamed(context, '/detalhes');
                       }
                     },
                     child: const Text('Enviar'))
